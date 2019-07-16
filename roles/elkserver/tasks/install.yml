@@ -1,0 +1,18 @@
+---
+# Устанавливаем ELK stack
+
+- name: Устанавливаем elasticsearch и java
+  yum:
+    name: [elasticsearch, java-openjdk-headless]
+  become: true
+
+- name: Устанавливаем logstash
+  yum:
+    name: logstash
+  become: true
+
+- name: Устанавливаем kibana
+  yum:
+    name: kibana
+  become: true
+

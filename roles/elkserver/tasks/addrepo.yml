@@ -1,0 +1,31 @@
+---
+- rpm_key:
+    state: present
+    key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+
+- name: Добавляем репозиторий elasticsearch
+  copy:
+    src=elasticsearch.repo
+    dest=/etc/yum.repos.d/elasticsearch.repo
+    owner=root
+    group=root
+    mode=0644
+  become: true
+
+- name: Добавляем репозиторий logstash
+  copy:
+    src=logstash.repo
+    dest=/etc/yum.repos.d/logstash.repo
+    owner=root
+    group=root
+    mode=0644
+  become: true
+
+- name: Добавляем репозиторий kibana
+  copy:
+    src=kibana.repo
+    dest=/etc/yum.repos.d/kibana.repo
+    owner=root
+    group=root
+    mode=0644
+  become: true

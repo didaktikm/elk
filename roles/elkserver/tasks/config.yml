@@ -1,0 +1,31 @@
+---
+# Копируем конфиги из шаблона
+
+- name: Копируем конфиг elasticsearch
+  template:
+    src=elasticsearch.yml.j2
+    dest=/etc/elasticsearch/elasticsearch.yml
+    owner=root
+    group=elasticsearch
+    mode=0660
+  become: true
+  ignore_errors: true
+
+- name: Копируем конфиг logstash
+  template:
+    src=logstash.yml.j2
+    dest=/etc/logstash/logstash.conf
+    owner=logstash
+    group=logstash
+    mode=0644
+  become: true
+
+- name: Копируем конфиг kibana
+  template:
+    src=kibana.yml.j2
+    dest=/etc/kibana/kibana.yml
+    owner=root
+    group=root
+    mode=0644
+  become: true
+  ignore_errors: true

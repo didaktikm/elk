@@ -1,0 +1,19 @@
+---
+
+- name: Запускаем elasticsearch
+  systemd:
+    name: elasticsearch
+    state: started
+    enabled: yes
+
+- name: Запускаем logstash
+  systemd:
+    name: logstash
+    state: started
+    enabled: yes
+
+- name: Запускаем kibana
+  systemd:
+    name: kibana
+    state: started
+    enabled: yes
