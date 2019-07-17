@@ -1,0 +1,24 @@
+filebeat:
+  # List of prospectors to fetch data.
+  prospectors:
+    [{"input_type": "log", "paths": ["/var/log/*.log"]}]
+
+# Configure what outputs to use when sending the data collected by the beat.
+# Multiple outputs may be used.
+output:
+
+
+  ### Logstash as output
+  logstash:
+    # The Logstash hosts
+    hosts: 172.20.10.50:5044
+    # Number of workers per Logstash host.
+    #worker: 1
+
+    # Optional load balance the events between the Logstash hosts
+    #loadbalance: true
+
+    # Optional index name. The default index name depends on the each beat.
+    # For Packetbeat, the default is set to packetbeat, for Topbeat
+    # top topbeat and for Filebeat to filebeat.
+    #index: filebeat

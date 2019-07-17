@@ -1,5 +1,5 @@
 ## ELK hosts
-[elkserver]
+[elk]
 172.20.10.50
 [web]
 172.20.0.51

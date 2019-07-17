@@ -1,6 +1,0 @@
----
-# Устанавливаем filebeat
-- name: Устанавливаем filebeat
-  yum:
-    name: filebeat
-  become: true

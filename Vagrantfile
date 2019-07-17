@@ -8,14 +8,14 @@ MACHINES = {
     :ip_addr => "172.20.10.50",
     :memory => "2048",
     :shell => "elk.sh",
-    :ansible => "playbook.yml"
+    :ansible => "elk.yml"
   },
   :"web" => {
     :box_name => "centos/7",
     :ip_addr => "172.20.10.51",
     :memory => "512",
     :shell => "web.sh",
-    :ansible => ""
+    :ansible => "web.yml"
   }
 }
 
@@ -34,6 +34,8 @@ Vagrant.configure("2") do |config|
       box.vm.provision "shell", path: boxconfig[:shell]
       box.vm.provision "ansible_local" do |ansible|
         ansible.playbook = boxconfig[:ansible]
+        #ansible.inventory_path = "hosts"
+        #box.vm.provision "shell", path: "shell.sh"
         end
     end
   end
