@@ -1,5 +1,6 @@
 ---
-- rpm_key:
+- name: Добавляем ключ репозитория
+  rpm_key:
     state: present
     key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
 

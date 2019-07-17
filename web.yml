@@ -1,0 +1,12 @@
+---
+
+- name: Устанавливаем ELK stack
+  hosts:
+    - web
+  gather_facts: no
+  remote_user: vagrant
+  become: true
+
+  roles:
+    -filebeat
+    -nginx
