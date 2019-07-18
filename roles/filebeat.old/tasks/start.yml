@@ -1,6 +1,0 @@
----
-- name: Запускаем filebeat
-  systemd:
-    name: filebeat
-    state: started
-    enabled: yes
