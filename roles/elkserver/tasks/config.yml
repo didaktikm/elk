@@ -22,7 +22,7 @@
 
 - name: Копируем конфиг filebeat
   template:
-    src=filebeat.yml.j2
+    src=filebeat.conf.j2
     dest=/etc/logstash/conf.d/filebeat.conf
     owner=logstash
     group=logstash
