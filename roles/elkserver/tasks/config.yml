@@ -20,6 +20,15 @@
     mode=0644
   become: true
 
+- name: Копируем конфиг filebeat
+  template:
+    src=filebeat.yml.j2
+    dest=/etc/logstash/conf.d/filebeat.conf
+    owner=logstash
+    group=logstash
+    mode=0644
+  become: true
+
 - name: Копируем конфиг kibana
   template:
     src=kibana.yml.j2
