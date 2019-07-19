@@ -3,7 +3,7 @@
 
 - name: Копируем конфиг elasticsearch
   template:
-    src=elasticsearch.yml.j2
+    src=elasticsearch.yml
     dest=/etc/elasticsearch/elasticsearch.yml
     owner=root
     group=elasticsearch
@@ -13,7 +13,7 @@
 
 - name: Копируем конфиг logstash
   template:
-    src=logstash.yml.j2
+    src=logstash.yml
     dest=/etc/logstash/logstash.conf
     owner=logstash
     group=logstash
@@ -22,7 +22,7 @@
 
 - name: Копируем конфиг filebeat
   template:
-    src=filebeat.conf.j2
+    src=filebeat.conf
     dest=/etc/logstash/conf.d/filebeat.conf
     owner=logstash
     group=logstash
@@ -31,7 +31,7 @@
 
 - name: Копируем конфиг kibana
   template:
-    src=kibana.yml.j2
+    src=kibana.yml
     dest=/etc/kibana/kibana.yml
     owner=root
     group=root

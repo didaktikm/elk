@@ -1,0 +1,11 @@
+---
+# Устанавливаем filebeat
+- name: Устанавливаем filebeat
+  yum:
+    name: filebeat
+  become: true
+
+# Включаем модуль NGINX
+- name: Enable module NGINX
+  command:
+      filebeat modules enable nginx system
